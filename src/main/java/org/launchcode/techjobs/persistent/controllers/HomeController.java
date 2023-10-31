@@ -52,7 +52,8 @@ public class HomeController {
                                        Errors errors, Model model, @RequestParam int employerId) {
 
         if (errors.hasErrors()) {
-	    model.addAttribute("title", "Add Job");
+	        model.addAttribute("title", "Add Job");
+            model.addAttribute("employers", employerRepository.findAll());
             return "add";
         }
 
